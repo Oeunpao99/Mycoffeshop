@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coffee Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- You can link to a CSS file for styling -->
+  </head>
+  <body>
+    <header>
+      <h1>Coffee Management System</h1>
+    </header>
+
+    <section id="add-order">
+      <h2>Add New Coffee Order</h2>
+      <form id="new-order-form">
+        <input
+          type="text"
+          id="customer-name"
+          name="customer-name"
+          placeholder="Customer Name"
+        />
+        <select id="coffee-type" name="coffee-type">
+          <!-- Options for coffee types -->
+        </select>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          placeholder="Quantity"
+        />
+        <button type="submit">Add Order</button>
+      </form>
+    </section>
+
+    <section id="pending-orders">
+      <h2>Pending Orders</h2>
+      <ul>
+        <!-- List of pending orders -->
+      </ul>
+    </section>
+
+    <section id="completed-orders">
+      <h2>Completed Orders</h2>
+      <ul>
+        <!-- List of completed orders -->
+      </ul>
+    </section>
+
+    <section id="manage-coffee">
+      <h2>Manage Coffee Menu</h2>
+      <!-- Form or interface to add/edit coffee types and prices -->
+    </section>
+
+    <footer>
+      <p>Coffee Management System © 2024</p>
+    </footer>
+  </body>
+</html>

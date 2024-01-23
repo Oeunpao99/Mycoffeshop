@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Registration</title>
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <section>
+      <div class="form-box">
+        <div class="form-value">
+          <form action="/register" method="post" onsubmit="registerUser()">
+            <h2>Registration</h2>
+            <div class="inputbox">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input type="email" required />
+              <label>Email</label>
+            </div>
+            <div class="inputbox">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input type="password" required />
+              <label>Password</label>
+            </div>
+            <!-- Add more form fields as needed -->
+
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"
+    ></script>
+    <script>
+      function registerUser() {
+        // Get the entered registration data
+        const email = document.querySelector('input[type="email"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+
+        // Perform client-side validation if needed
+
+        // Send the registration data to the server
+        fetch('/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        })
+          .then(response => response.json())
+          .then(data => {
+            // Handle the response from the server (optional)
+            console.log(data);
+            // You may redirect to another page or show a success message to the user
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            // Handle errors, show an error message to the user, etc.
+          });
+      }
+    </script>
+  </body>
+</html>
